@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+</head>
+<body>
+    <h1>Regex Matcher</h1>
+    <form method="post">
+        <label for="pattern">Pattern:</label><br>
+        <input type="text" id="pattern" name="pattern" required><br>
+        <label for="text">Text:</label><br>
+        <input type="text" id="text" name="text" required><br>
+        <button type="submit">Match</button><br>
+
+    <hr>
+    </form>
+    <p>{{text}}</p>
+    <p>{{pattern}}</p>
+    <hr>
+    {% if matches %}
+        <h2>Matches:</h2>
+        <ul>
+            {% for match in matches %}
+                <li>{{ match }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="/">Go Back</a>
+</body>
+</html>
